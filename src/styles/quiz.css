@@ -1,0 +1,37 @@
+.quiz{display:flex;justify-content:center;align-items:flex-start}
+.quiz-sheet{width:min(720px,100%);padding:clamp(18px,4vw,40px);background:rgba(253,250,241,.95);position:relative;z-index:2;margin-top:2vh}
+.quiz-lily{position:absolute;bottom:0;z-index:1;pointer-events:none}
+.ql1{left:0;--h:120px}.ql2{right:0;--h:110px}
+@media(min-width:900px){.ql1{--h:250px;left:1%}.ql2{--h:220px;right:1%}}
+.quiz-card{display:flex;flex-direction:column;gap:14px;animation:pagein .5s var(--ease) both}
+.quiz-prompt{font-size:clamp(40px,6vw,58px);margin:0;font-weight:400}
+.quiz-msg{font-size:1.1rem;line-height:1.7;margin:0;max-width:56ch}
+.quiz-opts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.opt{width:100%;text-align:left;display:flex;gap:14px;align-items:baseline;padding:14px 18px;background:var(--paper-2);border:1.8px solid var(--graphite);border-radius:18px 8px 16px 10px/10px 16px 8px 18px;transition:background .25s,transform .2s}
+.opt:hover{background:var(--butter);transform:translateX(3px) rotate(-.3deg)}
+.opt-l{font-size:2.1rem;min-width:1.6ch}
+.opt-t{font-size:1.02rem}
+.quiz-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.quiz-chose{font-size:2rem;color:var(--graphite-2);margin:0}
+.quiz-wish{font-size:2.1rem;margin:0}
+.quiz-found{font-size:.85rem;color:var(--graphite-2);margin:0}
+.qscene{display:flex;justify-content:center;min-height:170px;position:relative}
+.qscene svg{width:min(260px,70%);height:auto;overflow:visible}
+.qscene .fillable{fill:transparent;transition:fill 2.8s}
+[data-world="color"] .qscene .moon,[data-world="color"] .qscene .sun{fill:var(--butter)}
+[data-world="color"] .qscene .cndl{fill:var(--cream)}
+[data-world="color"] .qscene .door{fill:var(--coral)}
+[data-world="color"] .qscene .crown,[data-world="color"] .qscene .hills{fill:var(--sage)}
+[data-world="color"] .qscene .tree{fill:#D8B48C}
+.qscene .flm{fill:#F6D98A}
+.qs-lily{display:flex;height:200px;align-items:flex-end;justify-content:center}
+.qs-lily .lily{height:100%;width:auto}
+.qs-capy{position:relative;width:210px}
+.qs-photo{position:relative;margin:0;width:150px;transform:rotate(-2deg)}
+.qs-photo.landscape{width:210px}
+.qs-stars{position:relative;width:240px;height:160px}
+.qd{position:absolute}
+.q1{left:12%;top:10%;width:46px}.q2{left:50%;top:40%;width:34px}.q3{left:72%;top:6%;width:40px}.q4{left:30%;top:62%;width:34px}.q5{left:84%;top:58%;width:26px}
+.qs-capy .q1{left:-6%;top:0}.qs-capy .q2{left:92%;top:8%;width:34px}
+.qo-photo{margin:0;width:min(220px,60%);align-self:center;transform:rotate(1.5deg)}
+.qo-photo .note{text-align:center;margin-top:10px}

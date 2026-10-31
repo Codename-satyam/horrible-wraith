@@ -1,0 +1,105 @@
+.cake-page{display:flex;flex-direction:column;align-items:center;padding-top:72px}
+.cake-dim{position:fixed;inset:0;pointer-events:none;z-index:3;background:radial-gradient(circle at 50% 42%,transparent 25%,rgba(52,38,24,.3));opacity:0;transition:opacity 1.4s}
+.cake-page.quiet .cake-dim{opacity:1}
+.cake-lily{position:absolute;pointer-events:none;z-index:1;bottom:0}
+.cake-lily.cl1{left:0;--h:130px}.cake-lily.cl2{right:0;--h:120px}.cake-lily.cl3{display:none}
+@media(min-width:900px){.cake-lily.cl1{left:2%;bottom:40px;--h:min(50vh,340px)}.cake-lily.cl2{right:2%;bottom:40px;--h:min(46vh,310px)}.cake-lily.cl3{display:flex;left:22%;bottom:0;--h:130px}}
+.cake-wrap{position:relative;width:min(580px,94vw);z-index:4}
+.cake{display:block;width:100%;height:auto;overflow:visible;
+  --c-plate:var(--paper-2);--c-a:#F1E6D2;--c-b:#F4EAD6;--c-icing:#FFFAF0;--c-top:#FDF6E8;--c-candle:var(--paper-2);--c-deco:transparent}
+[data-world="color"] .cake{--c-plate:#FBF3E4;--c-a:var(--pink);--c-b:var(--butter);--c-top:#FFF4E0;--c-candle:var(--lilac);--c-deco:var(--coral)}
+.cake .f-plate{fill:var(--c-plate)}.cake .f-a{fill:var(--c-a)}.cake .f-b{fill:var(--c-b)}
+.cake .f-icing{fill:var(--c-icing)}.cake .f-top{fill:var(--c-top)}
+.cake .candle-body{fill:var(--c-candle)}.cake .deco{fill:var(--c-deco)}
+
+/* layers are drawn in real time */
+.cake .cl{opacity:0;transition:opacity .5s}
+.cake .cl.on{opacity:1}
+.cake .draw{stroke-dasharray:1;stroke-dashoffset:1;fill-opacity:0;transition:fill 2.8s}
+.cake .cl.on .draw{stroke-dashoffset:0;fill-opacity:1;transition:stroke-dashoffset 1.7s ease-in-out var(--dl,0s),fill-opacity 1s ease calc(var(--dl,0s) + 1.3s),fill 2.8s}
+
+/* flames */
+.cake .flame-out{fill:#F6D98A;stroke-width:1.6;transition:fill 2.8s}
+.cake .flame-in{fill:#FFF6D6;stroke:none}
+[data-world="color"] .cake .flame-out{fill:#FFC24D}
+[data-world="color"] .cake .flame-in{fill:#FF9D4D}
+.cake .flame-shape{transform-box:fill-box;transform-origin:50% 100%;opacity:0;transform:scale(.2)}
+.cake .flame-flick{transform-box:fill-box;transform-origin:50% 100%}
+.cake .flame[data-s="lit"] .flame-shape{opacity:1;transform:scale(1);transition:transform .7s var(--ease),opacity .5s}
+.cake .flame[data-s="lit"] .flame-flick{animation:flick 1.3s ease-in-out var(--fd,0s) infinite alternate}
+@keyframes flick{from{transform:scaleY(.95) skewX(-2deg)}to{transform:scaleY(1.07) skewX(2deg)}}
+.cake .flame[data-s="blowing"] .flame-shape{opacity:1;transform:skewX(-34deg) scale(.7,.55);transition:transform .7s ease-in var(--bd),opacity .7s ease-in var(--bd)}
+.cake .flame[data-s="out"] .flame-shape{opacity:0;transform:skewX(-40deg) scale(.15);transition:opacity .25s}
+.cake .glow{opacity:0;transition:opacity .8s,transform 1s;transform-box:fill-box;transform-origin:center;pointer-events:none}
+.cake .flame[data-s="lit"] .glow{opacity:.45}
+.cake.wished .flame[data-s="lit"] .glow{opacity:.9;transform:scale(1.4)}
+.cake .ember{fill:#FF9A4D;stroke:none;opacity:0}
+.cake[data-phase="out"] .ember{animation:ember 2s ease-out .15s both}
+@keyframes ember{0%{opacity:.95}100%{opacity:0}}
+.cake .smoke{fill:none;stroke:#3B3835;stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:1;opacity:0}
+.cake[data-phase="out"] .smoke{animation:smoke 2.8s ease-out var(--sd,0s) both}
+@keyframes smoke{0%{opacity:.8;stroke-dashoffset:1;transform:translateY(0)}60%{opacity:.5}100%{opacity:0;stroke-dashoffset:0;transform:translateY(-16px)}}
+
+/* wish stars */
+.cake .wstar{stroke:#3B3835;stroke-width:1.3;fill:var(--butter);opacity:0}
+.cake.wished .wstar{opacity:1;transition:opacity .9s ease var(--wd,0s);animation:twinkle 3s ease-in-out var(--wd,0s) infinite alternate}
+@keyframes twinkle{from{stroke-opacity:.5}to{stroke-opacity:1}}
+
+/* gust */
+.gust-shape{fill:rgba(59,56,53,.07);animation:gust-shape 1.5s ease-out both}
+@keyframes gust-shape{0%{opacity:0;transform:translateX(-30px)}30%{opacity:1}100%{opacity:0;transform:translateX(120px)}}
+.wind{stroke-dasharray:1;stroke-dashoffset:1;opacity:0;animation:wind 1.5s ease-out var(--wd,0s) both}
+@keyframes wind{0%{stroke-dashoffset:1;opacity:0;transform:translateX(-30px)}25%{opacity:.9}100%{stroke-dashoffset:0;opacity:0;transform:translateX(90px)}}
+.speck{opacity:0;animation:speck 1.6s ease-out var(--pd,0s) both}
+@keyframes speck{0%{opacity:0;transform:translate(0,0)}25%{opacity:.7}100%{opacity:0;transform:translate(var(--dx),var(--dy))}}
+
+/* below the cake */
+.cake-ui{position:relative;z-index:6;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:6px;min-height:150px;padding:0 10px}
+.cake-step{display:flex;flex-direction:column;align-items:center;gap:14px;animation:pagein .6s var(--ease) both}
+.cake-prompt{font-size:clamp(36px,5vw,50px);margin:0}
+.cake-wish{font-size:clamp(30px,4vw,40px);margin:0;max-width:30ch}
+.cake-final-msg{font-size:clamp(36px,5vw,52px);margin:0;max-width:24ch}
+.cake-closing{font-size:2.3rem;color:var(--graphite-2);margin:0}
+.cake-mic{font-size:.88rem;color:var(--graphite-2);max-width:46ch;margin:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.cake-mic p{margin:0}
+.cake-final .quiz-actions{justify-content:center}
+
+/* floating hearts, stars and confetti marks */
+.celebrate{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:5}
+.cm{position:absolute;left:var(--x);bottom:12%;width:24px;height:24px;opacity:0;animation:rise var(--dur) ease-out var(--dl) 1 forwards}
+@keyframes rise{0%{opacity:0;transform:translate(0,0) rotate(0)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-70vh) rotate(40deg)}}
+
+/* ============ the typed wish ============ */
+.wish-field{display:flex;flex-direction:column;align-items:center;gap:4px;width:min(420px,88vw)}
+.wish-input{width:100%;resize:none;font-size:1.9rem;line-height:1.1;padding:.35em .6em;color:var(--graphite);background:var(--paper-2);border:1.8px solid var(--graphite);border-radius:14px 10px 14px 8px/9px 14px 10px 14px;box-shadow:2px 3px 0 rgba(59,56,53,.14);text-align:center}
+.wish-input::placeholder{color:var(--graphite-3)}
+.wish-note{font-size:.8rem;color:var(--graphite-2)}
+.cake-yourwish{font-size:clamp(28px,4vw,38px);margin:0;max-width:28ch;color:var(--graphite-2);overflow-wrap:anywhere}
+.cake-sent{font-size:2rem;margin:0;color:var(--graphite-2)}
+
+/* the paper note folds into a plane, then flies away */
+.wish-plane{position:absolute;left:50%;top:30%;width:0;height:0;z-index:7;pointer-events:none}
+.wp-fly{position:absolute;left:0;top:0;transform:translate(-50%,-50%);animation:wp-fly 5s cubic-bezier(.45,0,.55,1) 2.6s both}
+.wp-card{width:min(260px,70vw);padding:12px 16px;background:var(--paper-2);border:1.8px solid var(--graphite);box-shadow:2px 3px 0 rgba(59,56,53,.18);text-align:center;opacity:0;animation:wp-card 2.7s ease both}
+.wp-card p{margin:0;font-size:1.8rem;overflow-wrap:anywhere}
+.wp-plane{position:absolute;left:50%;top:50%;width:92px;margin:-31px 0 0 -46px;opacity:0;animation:wp-plane-in .5s ease 2.2s both}
+@keyframes wp-card{0%{opacity:0;transform:translateY(10px) rotate(-2deg)}22%{opacity:1;transform:none}68%{opacity:1;transform:none}100%{opacity:0;transform:scale(.2,.1) rotate(-14deg)}}
+@keyframes wp-plane-in{from{opacity:0;transform:scale(.4) rotate(10deg)}to{opacity:1;transform:none}}
+@keyframes wp-fly{0%{opacity:1;transform:translate(-50%,-50%) rotate(0)}30%{transform:translate(calc(-50% + 8vw),calc(-50% - 16vh)) rotate(-10deg)}100%{opacity:0;transform:translate(calc(-50% + 46vw),-95vh) rotate(-24deg) scale(.45)}}
+
+/* ============ decorating ============ */
+.cake .cl-decor{pointer-events:none}
+.cake .cl-decor.editable .sticker{pointer-events:auto;cursor:grab;touch-action:none}
+.cake .cl-decor.editable .sticker:active{cursor:grabbing}
+.cake .stk-in{transform-box:fill-box;transform-origin:center;animation:stk-pop .55s var(--ease) both}
+.cake .cl-decor.editable .sticker:hover .stk-in{filter:drop-shadow(0 2px 2px rgba(59,56,53,.3))}
+@keyframes stk-pop{0%{opacity:0;transform:translateY(-16px) scale(1.5) rotate(-8deg)}55%{opacity:1;transform:translateY(2px) scale(.9)}100%{opacity:1;transform:none}}
+.deco-tray{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:min(560px,94vw)}
+.deco-item{width:58px;height:58px;padding:5px;background:var(--paper-2);border:1.8px solid var(--graphite);border-radius:14px 10px 14px 9px/9px 14px 10px 14px;box-shadow:2px 3px 0 rgba(59,56,53,.14);touch-action:none;transition:transform .2s var(--ease),background .3s}
+.deco-item:hover{transform:translateY(-3px) rotate(-3deg);background:var(--cream)}
+.deco-item:active{cursor:grabbing}
+.deco-item svg{width:100%;height:100%;display:block;pointer-events:none}
+.deco-hint{margin:0;font-size:.85rem;color:var(--graphite-2);max-width:48ch}
+.deco-ghost{position:fixed;z-index:60;width:72px;height:72px;margin:-36px 0 0 -36px;pointer-events:none;filter:drop-shadow(0 6px 5px rgba(59,56,53,.28));transform:rotate(-6deg) scale(1.1)}
+.deco-ghost svg{width:100%;height:100%}
+.cake-wrap.decorating .cake{touch-action:none}
