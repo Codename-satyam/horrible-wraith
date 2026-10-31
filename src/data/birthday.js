@@ -28,6 +28,7 @@ export const birthday = {
   pinboardTitle: 'The Memory Wall',
   pinboardHint: 'Tap a photograph to read the note pinned to it.',
   bookTitle: 'A Little Book of Memories',
+  bookHint: 'Drag a page to turn it, or use the arrows.',
   bookOpenButton: 'Open the book',
 
   // Act IV
@@ -46,6 +47,12 @@ export const birthday = {
   // Act V: the wish. She can type it; it stays on her device and floats away as a paper plane.
   wishPlaceholder: 'Type your wish here, or keep it in your head...',
   wishNote: 'Optional. It is never sent anywhere.',
+  decoratePrompt: 'First, make it yours. Drag something onto the cake.',
+  decorateHint: 'Press one and it finds a spot. Drag a sticker around to move it, or off the cake to take it away.',
+  decorateFull: 'The cake is full of good things. Undo or drag one off to make room.',
+  decorateDone: 'It looks perfect',
+  decorateSkip: 'Skip decorating',
+  decorateAgain: 'Decorate some more',
   wishSent: 'Your wish is on its way.',
 
   // Finale page
@@ -55,16 +62,16 @@ export const birthday = {
     src: '/audio/voice-note.mp3',
     title: 'One more thing, out loud',
     caption: 'Press play. It is short, I promise.',
-    transcript: 'Just wanted to say happy birthday out loud. I hope today is exactly as beautiful as you are.' 
+    transcript: '' // optional written version, shown under the player
   },
 
   finale: {
     heading: 'Happy Birthday, {name}!',
     paragraphs: [
-      'Watching you find your way through life, chasing your dreams, and being the beautiful soul you are is one of my greatest privileges. You have this magical way of making my world warmer, my days brighter, and my heart a little fuller just by being you. And sometimes, I wish I could show you how beautiful you look through my eyes, how much happiness you bring into my life, and how even the smallest things about you have found a home in my heart. So, I wanted to create a little corner of the internet just for you—a place where the world can pause for a moment and everything can be about *you*, the girl who unknowingly makes my world feel so much more like home. ❤️',
+      'Watching you find your way through life, chasing your dreams, and being the beautiful soul you are is one of my greatest privileges. You have this magical way of making my world warmer, my days brighter, and my heart a little fuller just by being you. And sometimes, I wish I could show you how beautiful you look through my eyes, how much happiness you bring into my life, and how even the smallest things about you have found a home in my heart. So, I wanted to create a little corner of the internet just for you—a place where the world can pause for a moment and everything can be about you, the girl who unknowingly makes my world feel so much more like home. ❤️',
       'I hope this year is as beautiful to you as you make my world feel. I hope it brings you a thousand reasons to smile, dreams that come true, and little moments that remind you how deeply loved you are. Keep shining, my love, and never forget that no matter where life takes you, you\'ll always have me cheering for you, holding your hand through the difficult days, and celebrating every little victory. You deserve all the happiness this world has to offer, and if I can be even a tiny part of that happiness, I\'ll consider myself the luckiest person alive. ❤️'
     ],
-    signature: 'Love, Satyam',
+    signature: 'The Dumb One',
     keptWishTitle: 'Your wish, folded small',
     keptWishOpen: 'Unfold it',
     keptWishClose: 'Fold it back up',

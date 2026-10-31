@@ -18,7 +18,7 @@ export const memories = [
     caption: 'Where it started', featured: true, rotation: -3, shape: 'portrait',
     quote: 'The moment I knew this was something special.',
     title: 'A Beautiful Beginning', date: '',
-    story: 'Looking back at this day, I still remember exactly how I felt. \n\nIt was the start of an entirely new chapter for us, and every detail is etched in my memory.',
+    story: 'Looking back to the day we started talking, I can’t help but smile. It was the start of something that would change my life in the most wonderful ways. Every memory since then has been a testament to how lucky I am to have you.',
     annotation: 'one for the little book',
     welcome: { x: '3%', y: '7%', w: '19%', rot: -4, hold: 'tape' }
   },
@@ -32,11 +32,11 @@ export const memories = [
     welcome: { x: '77%', y: '5%', w: '18%', rot: 3.5, hold: 'clip' }
   },
   {
-    id: 'memory-03', image: img(3), alt: 'Photograph 3: A spontaneous adventure',
+    id: 'memory-03', image: img(3), alt: 'Photograph 3: A Glance of Beauty',
     caption: 'On the move', featured: true, rotation: -2, shape: 'portrait',
     quote: 'Anywhere with you is my favorite place to be.',
     title: 'Chasing Horizons', date: '',
-    story: 'I love how we can just pack up and go, making everything an adventure. Your energy here is so contagious, and it reminds me why I love our spontaneity.',
+    story: 'Even in the rush of life, there are moments that make everything else fade away. This photo captures one of those fleeting, perfect instances.',
     annotation: 'keep this one',
     welcome: { x: '7%', y: '42%', w: '17%', rot: 2, hold: 'pin' }
   },
@@ -45,7 +45,7 @@ export const memories = [
     caption: 'Pure joy', featured: true, rotation: 3, shape: 'square',
     quote: 'Your laugh is still my favorite sound in the world.',
     title: 'Endless Smiles', date: '',
-    story: 'I don’t even remember what we were laughing about, but I remember how my chest ached from smiling so hard. I always want to see you this happy.',
+    story: 'I can’t get over how infectious your laughter is. Every time I hear it, I feel like the luckiest person alive, and this photo captures that perfectly.',
     annotation: 'a good day',
     welcome: { x: '75%', y: '40%', w: '18%', rot: -3, hold: 'tape' }
   },
@@ -63,7 +63,7 @@ export const memories = [
     caption: 'City glow', featured: false, rotation: 2, shape: 'portrait',
     quote: 'The world gets quiet when I’m looking at you.',
     title: 'Under the Lights', date: '',
-    story: 'The lighting here was just right, but you were the one glowing. That evening felt like a scene out of a movie, written just for us.',
+    story: 'The lighting here was just right, but you were the one glowing. That evening felt like a scene out of a movie, written just for you.',
     annotation: 'favorite evening'
   },
   {
@@ -79,7 +79,7 @@ export const memories = [
     caption: 'Looking sharp', featured: false, rotation: 1.5, shape: 'square',
     quote: 'You always know how to steal the room.',
     title: 'Stealing Glances', date: '',
-    story: 'We dressed up, stepped out, and I couldn’t keep my eyes off you. You looked absolutely stunning that day, and I was so proud to be by your side.',
+    story: 'Your one look is enough to make my heart skip a beat, and I couldn’t keep my eyes off you. You look absolutely stunning every day, and I am lucky to be by your side.',
     annotation: 'so beautiful'
   },
   {
@@ -87,7 +87,7 @@ export const memories = [
     caption: 'Caught off guard', featured: false, rotation: -1, shape: 'portrait',
     quote: 'You didn’t know I was looking, but I always am.',
     title: 'Unfiltered You', date: '',
-    story: 'You hate when I take candid pictures, but this is exactly how I see you every single day—effortlessly beautiful and completely authentic.',
+    story: 'It\'s Kind of depressing I never got to meet you before, but this is exactly how I see you every single day—effortlessly beautiful and completely authentic.',
     annotation: 'my favorite angle'
   },
   {
@@ -95,7 +95,7 @@ export const memories = [
     caption: 'Breath of fresh air', featured: false, rotation: 3.5, shape: 'landscape',
     quote: 'The view was great, but the company was better.',
     title: 'Top of the World', date: '',
-    story: 'The journey to get here was long, but standing there with you made every step worth it. There’s no one else I’d rather explore the world with.',
+    story: 'The journey has just started, but standing there with you will definitely make it worth it. There’s no one else I’d rather explore the world with.',
     annotation: ''
   },
   {
@@ -103,7 +103,7 @@ export const memories = [
     caption: 'Never a dull moment', featured: false, rotation: -3, shape: 'square',
     quote: 'I love that we can be complete idiots together.',
     title: 'Partners in Crime', date: '',
-    story: 'This picture perfectly sums up our dynamic. We never take ourselves too seriously, and those fits of laughter are the anchor of our relationship.',
+    story: 'This picture perfectly sums up our dynamic. We never take ourselves too seriously, and those fits of laughter are the anchor that carries me forwar.',
     annotation: 'never change'
   },
   {

@@ -31,4 +31,3 @@ The five opening photos are the ids in `birthday.featuredMemoryIds`. The pinboar
 
 - **Photo book:** the page is cut into 10 strips that bend as it turns (CSS 3D, no library). Drag a page with a finger or mouse, or use the arrows / arrow keys. Tweak `SLICES` in `PageLeaf.jsx`, the bend (`-5.5deg`) and the speed (`TURN_MS`, `.95s`) in `PhotoBook.jsx` and `boards.css`. With reduced motion on, pages simply swap.
 - **Decorating:** before the wish, she drags stickers from a tray onto the cake (or presses one and it finds a spot). Drag a sticker off the cake to remove it. Stickers are saved on her device. Add your own kinds in `src/lib/decor.js` (`KINDS`) and `StickerArt` in `src/components/cake/CakeDecor.jsx`.
-"# horrible-wraith" 
